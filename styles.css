@@ -1,0 +1,106 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f7f7f7;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .game-container {
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+  
+  .choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+  }
+  
+  .choice {
+    position: relative;
+    background: #ececec;
+    border: 5px dashed transparent; /* Base border that won't be affected */
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 55px;
+    overflow: hidden; /* To hide any overflowing dashed border */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.choice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 40px dashed #74767639; /* Color of the dashed border */
+    border-radius: 55px;
+    box-sizing: border-box;
+    animation: rotateDash 2s linear infinite; /* Animation for rotating dashed border */
+}
+
+.choice:hover {
+    background: #d4d4d4;
+    transform: scale(1.1);
+}
+
+@keyframes rotateDash {
+    0% {
+        transform: rotate(0deg); /* Start from 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate the dashed border 360 degrees */
+    }
+}
+
+  
+  .results p {
+    margin: 0.5rem 0;
+  }
+  
+  span {
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  .play-again {
+    background: #b70043;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .play-again:hover {
+    background: #540026;
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.7rem;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 1.3rem;
+    transform: scale(1.1);
+  }
+  
