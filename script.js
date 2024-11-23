@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 const choices = ["Rock", "Paper", "Scissors"];
 
 document.querySelectorAll(".choice").forEach(button => {
@@ -11,6 +14,9 @@ function playGame(playerChoice) {
   document.getElementById("player-choice").querySelector("span").textContent = playerChoice;
   document.getElementById("computer-choice").querySelector("span").textContent = computerChoice;
   document.getElementById("result").querySelector("span").textContent = result;
+  document.getElementById("player-score").textContent = playerScore;
+  document.getElementById("computer-score").textContent = computerScore;
+
 }
 
 function determineWinner(player, computer) {
@@ -22,17 +28,20 @@ function determineWinner(player, computer) {
     (player === "Paper" && computer === "Rock") ||
     (player === "Scissors" && computer === "Paper")
   ) {
+    playerScore++;
     return "You Win!";
   }
+  computerScore++;
   return "You Lose!";
 }
 
 function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+
+  document.getElementById("player-score").textContent = playerScore;
+  document.getElementById("computer-score").textContent = computerScore;
   document.getElementById("player-choice").querySelector("span").textContent = "None";
   document.getElementById("computer-choice").querySelector("span").textContent = "None";
   document.getElementById("result").querySelector("span").textContent = "Start Playing!";
 }
-
-// function capitalize(word) {
-//   return word.charAt(0).toUpperCase() + word.slice(1);
-// }
