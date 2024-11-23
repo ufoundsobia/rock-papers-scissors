@@ -18,9 +18,9 @@ function determineWinner(player, computer) {
     return "It's a Draw!";
   }
   if (
-    (player === "rock" && computer === "scissors") ||
-    (player === "paper" && computer === "rock") ||
-    (player === "scissors" && computer === "paper")
+    (player === "Rock" && computer === "Scissors") ||
+    (player === "Paper" && computer === "Rock") ||
+    (player === "Scissors" && computer === "Paper")
   ) {
     return "You Win!";
   }
